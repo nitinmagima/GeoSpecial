@@ -15,7 +15,7 @@ def load_admin_boundary(admin_level):
         "Admin Level 3": "adm3.geojson",
         "Admin Level 4": "adm4.geojson"
     }
-    base_path = "/Users/magima/Documents/UNOpenWeek/UNICEFCyclone/data/boundaries/Bangladesh_Latest_-_Global_Administrative_Boundaries"
+    base_path = "data/boundaries/Bangladesh_Latest_-_Global_Administrative_Boundaries"
     file_path = os.path.join(base_path, level_map[admin_level])
     if os.path.exists(file_path):
         gdf = gpd.read_file(file_path)
@@ -26,7 +26,7 @@ def load_admin_boundary(admin_level):
 
 @st.cache_data(show_spinner=False)
 def load_cyclone_track():
-    track_path = "/Users/magima/Documents/UNOpenWeek/UNICEFCyclone/data/boundaries/CyclonePath/amphan_2020_track.geojson"
+    track_path = "data/boundaries/CyclonePath/amphan_2020_track.geojson"
     if os.path.exists(track_path):
         gdf = gpd.read_file(track_path)
         return pd.DataFrame({
@@ -37,7 +37,7 @@ def load_cyclone_track():
 
 @st.cache_data(show_spinner=False)
 def load_populated_places():
-    path = "/Users/magima/Documents/UNOpenWeek/UNICEFCyclone/data/hotosm_bgd_health_facilities_points_geojson.geojson"
+    path = "data/hotosm_bgd_health_facilities_points_geojson.geojson"
     if os.path.exists(path):
         gdf = gpd.read_file(path)
         return gdf.to_crs("EPSG:4326")
@@ -45,7 +45,7 @@ def load_populated_places():
 
 @st.cache_data(show_spinner=False)
 def load_education_facilities():
-    path = "/Users/magima/Documents/UNOpenWeek/UNICEFCyclone/data/hotosm_bgd_education_facilities_points_geojson.geojson"
+    path = "data/hotosm_bgd_education_facilities_points_geojson.geojson"
     if os.path.exists(path):
         gdf = gpd.read_file(path)
         return gdf.to_crs("EPSG:4326")
