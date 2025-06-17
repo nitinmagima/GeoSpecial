@@ -9,3 +9,5 @@ plotly==5.18.0
 PyPDF2==3.0.1
 pydeck==0.9.1
 altair==5.2.0
+fiona>=1.9.0,<1.9.5
+
